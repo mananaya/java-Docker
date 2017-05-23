@@ -1,0 +1,18 @@
+# EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+spring:
+  application:
+    name: shipper-gateway
+
+server:
+  port: 8787
+  
+zuul:
+  routes:    
+    shipper:
+      url: http://ec2-52-41-140-215.us-west-2.compute.amazonaws.com:8080/
+  host:
+    max-per-route-connections: 1
+    max-total-connections: 1
+
+info:
+  component: Zuul Server
